@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes</title>
+    <link rel="stylesheet" href="clothes.css">
+</head>
+<body>
+    <div class="heading">
+    <h1>Clothes</h1>
+    <p>Fashonista Trend Is On!</p>
+</div>
+
+<div>
+    <input type="text" class="search-box" placeholder="Search here..." id="search_bar">
+            <button class="elec-search-btn">Search</button>
+</div>
+
+<div class="container">
+    <div class="sub-container">
+        <img src="asserts/dress1.png" alt="Stylish Women's frock">
+        <p>Stylish Women's frock</p>
+            <h6>$30</h6>
+            <a href="dress1.html">Select Product</a>
+    </div>
+
+    <div class="sub-container">
+        <img src="asserts/dress2.png" alt="Vintage frock">
+        <p>Vintage frock</p>
+            <h6>$100</h6>
+            <a href="dress2.html">Select Product</a>
+    </div>
+
+    <div class="sub-container">
+        <img src="asserts/dress3.png" alt="Rare Blue Frock">
+        <p>Rare Blue Frock</p>
+            <h6>$220</h6>
+            <a href="dress3.html">Select Product</a>
+    </div>
+
+    <div class="sub-container">
+        <img src="asserts/dress4.png" alt="Party Wear Disney Dress">
+        <p>Party Wear Disney Dress</p>
+            <h6>$70</h6>
+            <a href="dress4.html">Select Product</a>
+    </div>
+
+    <div class="sub-container">
+        <img src="asserts/men1.png" alt="Casuals">
+        <p>Casuals</p>
+            <h6>$30</h6>
+            <a href="men1.html">Select Product</a>
+    </div>
+
+    <div class="sub-container">
+        <img src="asserts/men2.png" alt="Formals">
+        <p>Formals</p>
+            <h6>$45</h6>
+            <a href="men2.html">Select Product</a>
+    </div>
+
+    <div class="sub-container">
+        <img src="asserts/men3.png" alt="Party Wear">
+        <p>Party Wear</p>
+            <h6>$34</h6>
+            <a href="men3.html">Select Product</a>
+    </div>
+
+    <div class="sub-container">
+        <img src="asserts/men4.png" alt="Chill Dress for Men">
+        <p>Chill Dress for Men</p>
+            <h6>$27</h6>
+            <a href="men4.html">Select Product</a>
+    </div>
+</div>
+
+<script>
+    function searchitem() {
+var input, filter, containers, image, dataName;
+
+
+input = document.getElementById('search_bar');
+filter = input.value.toLowerCase();
+
+
+containers = document.querySelectorAll('.container .sub-container');
+
+containers.forEach(function(container) {
+ image = container.querySelector('img'); 
+ if (image) {
+     dataName = image.getAttribute('alt'); 
+     if (dataName) {
+         dataName = dataName.toLowerCase(); 
+
+         
+         if (dataName.includes(filter)) {
+             container.style.display = ''; 
+         } else {
+             container.style.display = 'none'; 
+         }
+     } else {
+         
+         container.style.display = 'none'; 
+     }
+ } else {
+     
+     container.style.display = 'none';
+ }
+});
+}
+
+
+document.getElementById('search_bar').addEventListener('input', searchitem);
+
+
+
+
+
+ </script>
+</body>
+</html>

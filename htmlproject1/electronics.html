@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics</title>
+    <link rel="stylesheet" href="electronics.css">
+</head>
+<body>
+    <div class="heading">
+    <h1 class="title">Electronics</h1>
+    <p class="subhead">Mega electronic sale is on!</p><br>
+</div>
+
+    <div class="elec-search">
+        <input type="text" class="search-box" id="search_bar" placeholder="Search here...">
+            <button class="elec-search-btn">Search</button>
+    </div>
+
+    <div class="container">
+        <div class="sub-container">
+            <img src="asserts/airpod_elec.png" alt="Iphone Headphone">
+            <p>Iphone Headphone</p>
+                <h6>$30</h6>
+                <a href="iphoneheadphone.html">Select Product</a>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/headphones_elec.jpg" alt="Headphone">
+            <p>Headphone</p>
+                <h6>$20</h6>
+                <a href="headphone.html">Select Product</a>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/ipad_elec.jpg" alt="Ipad">
+            <p>Ipad</p>
+                <h6>$100</h6>
+                <a href="ipad.html">Select Product</a>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/iphone_elec.jpg" alt="iphone">
+            <p>iphone</p>
+                <h6>$60</h6>
+                <a href="iphone.html">Select Product</a>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/applewatch_elec.jpg" alt="Apple Watch">
+            <p>Apple Watch</p>
+                <h6>$40</h6>
+                <a href="applewatch.html">Select Product</a>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/powerbank_elec.jpg" alt="Powerbank">
+            <p>Powerbank</p>
+                <h6>$25</h6>
+                <a href="powerbank.html">Select Product</a>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/applepencil_elec.jpg" alt="Apple Pencil">
+            <p>Apple Pencil</p>
+                <h6>$43</h6>
+                <a href="applepencil.html">Select Product</a>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/alexa_elec.jpg" alt="Alexa">
+            <p>Alexa</p>
+                <h6>$50</h6>
+                <a href="alexa.html">Select Product</a>
+        </div>
+
+    </div>
+    <script>
+    function searchitem() {
+var input, filter, electronics, image, dataName;
+
+
+input = document.getElementById('search_bar');
+filter = input.value.toLowerCase();
+
+
+electronics = document.querySelectorAll('.container .sub-container');
+
+electronics.forEach(function(container) {
+ image = container.querySelector('img'); 
+ if (image) {
+     dataName = image.getAttribute('alt'); 
+     if (dataName) {
+         dataName = dataName.toLowerCase(); 
+
+         
+         if (dataName.includes(filter)) {
+             container.style.display = ''; 
+         } else {
+             container.style.display = 'none'; 
+         }
+     } else {
+         
+         container.style.display = 'none'; 
+     }
+ } else {
+     
+     container.style.display = 'none';
+ }
+});
+}
+document.getElementById('search_bar').addEventListener('input', searchitem);
+ </script>
+    
+</body>
+</html>

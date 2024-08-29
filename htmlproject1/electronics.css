@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.heading{
+    background-color: antiquewhite;
+    height: 100px;
+}
+
+.title{
+    font-size: 50px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.subhead{
+    text-align: center;
+    font-weight: 300;
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.subtext:hover{
+    color: blue;
+    cursor: pointer;
+    transform: scale(0.8s);
+    animation: electronic infinite;
+}
+
+@keyframes electronic {
+    from{
+        background-color: red;
+    }
+    to{
+        background-color: blue;
+    }
+    
+}
+
+.search-box{
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+.elec-search-btn{
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+    flex-wrap: wrap;
+}
+
+.sub-container{
+    width: 20%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top:10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.812),0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: 0.4s;
+    background-color: aliceblue;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.sub-container:hover{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.22),0 3px 6px rgba(0, 0, 0, 0.22);
+    transform: translate(0px,-8px);
+}
+
+.sub-container>img{
+    max-width: auto;
+    height: 200px;
+    text-align: center;
+    margin: auto;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.sub-container>p{
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sub-container>h6{
+    font-size: 20px;
+}
+
+.sub-container>a{
+    text-decoration: none;
+    border: solid 2px black;
+   border-radius: 10px;
+    color: black;
+}

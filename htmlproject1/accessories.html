@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories</title>
+    <link rel="stylesheet" href="accessories.css">
+
+</head>
+<body>
+    <div class="main">
+        <h1 class="title">ACCESSORIES</h1>
+        <p class="subtitle">Add a little sparkle to your style</p>
+        </div>
+    
+        <div>
+            <input type="text" class="search-box" id="search_bar" placeholder="Search here...">
+                    <button class="search-btn">Search</button>
+        </div>
+    
+        <div class="container" id="main2">
+            <div class="sub-container">
+                <img src="asserts/w1.png" data-name="Stylish Bracelet">
+                <p>Latest Stylish Multilayer Gold Plated Bracelet</p>
+                    <h6>$60</h6>
+            </div>
+        
+            <div class="sub-container">
+                <img src="asserts/w2.png" data-name="30 pairs combo set - crystal earrings">
+                <p>30 pairs combo set - crystal earrings</p>
+                    <h6>$40</h6>
+            </div>
+        
+            <div class="sub-container" >
+                <img src="asserts/w3.png"  data-name="Flower lock hair clip">
+                <p>Flower lock hair clip</p>
+                    <h6>$36</h6>
+            </div>
+        
+            <div class="sub-container">
+                <img src="asserts/w4.png"  data-name="makeup pouch">
+                <p>Makeup pouch</p>
+                    <h6>$72</h6>
+            </div>
+        
+            <div class="sub-container">
+                <img src="asserts/w5.png"  data-name="Latest butterfly necklace">
+                <p>Latest butterfly necklace</p>
+                    <h6>$89</h6>
+            </div>
+        
+            <div class="sub-container" >
+                <img src="asserts/j1.png"  data-name="Snap-on Shirt Button Cover Cufflinks Set for Men - Alphabet">
+                <p>Snap-on Shirt Button Cover Cufflinks Set for Men - Alphabet</p>
+                    <h6>$30</h6>
+            </div>
+        
+            <div class="sub-container">
+                <img src="asserts/j2.png"  data-name="Stainless silver chain">
+                <p>Stainless Silver Chain</p>
+                    <h6>$37</h6>
+            </div>
+        
+            <div class="sub-container" >
+                <img src="asserts/j3.png"  data-name="Vintage Double Ring">
+                <p>Vintage Double Ring</p>
+                    <h6>$99</h6>
+            </div>
+    
+            <div class="sub-container" >
+                <img src="asserts/j4.png"  data-name="Magnetic leather Bracelet">
+                <p>Magnetic leather Bracelet</p>
+                    <h6>$199</h6>
+            </div>
+    
+            <div class="sub-container">
+                <img src="asserts/j5.png"  data-name="Solid Black and Rhodium Plating Stainless Steel Jewellery Combo">
+                <p>Solid Black and Rhodium Plating Stainless Steel Jewellery Combo</p>
+                    <h6>$95</h6>
+            </div>
+    
+        
+        </div>
+ <script>
+    function searchitem() {
+    var input, filter, accessories, image, dataName;
+
+   
+    input = document.getElementById('search_bar');
+    filter = input.value.toLowerCase();
+
+    
+   accessories = document.querySelectorAll('.container .sub-container');
+
+    accessories.forEach(function(container) {
+        image = container.querySelector('img'); 
+        if (image) {
+            dataName = image.getAttribute('data-name'); 
+            if (dataName) {
+                dataName = dataName.toLowerCase(); 
+
+                
+                if (dataName.includes(filter)) {
+                    container.style.display = ''; 
+                } else {
+                    container.style.display = 'none'; 
+                }
+            } else {
+                
+                container.style.display = 'none'; 
+            }
+        } else {
+            
+            container.style.display = 'none';
+        }
+    });
+}
+
+
+document.getElementById('search_bar').addEventListener('input', searchitem);
+ </script>
+    
+</body>
+</html>

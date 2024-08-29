@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeUp</title>
+    <link rel="stylesheet" href="makeup.css">
+</head>
+<body>
+    <div class="main">
+    <h1 class="title">BEAUTY PRODUCTS</h1>
+    <p class="subtitle">Embrace Your Beauty, Define Your Style</p>
+    </div>
+
+    <div>
+        <input type="text" class="search-box" id="search_bar" placeholder="Search here...">
+                <button class="search-btn">Search</button>
+    </div>
+
+    <div class="container">
+        <div class="sub-container">
+            <img src="asserts/m1.png" alt="Lakmē">
+            <p>Lakmē Care Cream</p>
+                <h6>$20</h6>
+        </div>
+    
+        <div class="sub-container">
+            <img src="asserts/m2.png" alt="Insight Concealer Palette">
+            <p>Insight Concealer Palette</p>
+                <h6>$35</h6>
+        </div>
+    
+        <div class="sub-container">
+            <img src="asserts/m3.png" alt="Maybelline NewYork">
+            <p>Maybelline NewYork</p>
+                <h6>$80</h6>
+        </div>
+    
+        <div class="sub-container">
+            <img src="asserts/m4.png" alt="Mars Pencil">
+            <p>Mars Pencil</p>
+                <h6>$20</h6>
+        </div>
+    
+        <div class="sub-container">
+            <img src="asserts/m5.png" alt="Maybelline NewYork Hyper Curl">
+            <p>Maybelline NewYork Hyper Curl</p>
+                <h6>$85</h6>
+        </div>
+    
+        <div class="sub-container">
+            <img src="asserts/m6.png" alt="MakeUp brush set">
+            <p>MakeUp brush set</p>
+                <h6>$50</h6>
+        </div>
+    
+        <div class="sub-container">
+            <img src="asserts/m7.png" alt="Myblush lashes">
+            <p>Myblush lashes</p>
+                <h6>$34</h6>
+        </div>
+    
+        <div class="sub-container">
+            <img src="asserts/m8.png" alt="Maybelline NewYork Multiuse Concealer">
+            <p>Maybelline NewYork Multiuse Concealer</p>
+                <h6>$72</h6>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/m9.png" alt="Blue Heaven MakeUp Fixer">
+            <p>Blue Heaven MakeUp Fixer</p>
+                <h6>$38</h6>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/m10.png" alt="Cookie & Souffle">
+            <p>Cookie & Souffle</p>
+                <h6>$66</h6>
+        </div>
+
+        <div class="sub-container">
+            <img src="asserts/m11.png" alt="Maybelline NewYork Lipstick">
+            <p>Maybelline NewYork Lipstick</p>
+                <h6>$80</h6>
+        </div>
+    
+    </div>
+    
+    <script>
+    function searchitem() {
+var input, filter, makeup, img, dataName;
+input = document.getElementById('search_bar');
+filter = input.value.toLowerCase();
+makeup = document.querySelectorAll('.container .sub-container');
+makeup.forEach(function(container) {
+ img = container.querySelector('img'); 
+ if (img) {
+     dataName = img.getAttribute('alt'); 
+     if (dataName) {
+         dataName = dataName.toLowerCase(); 
+
+         
+         if (dataName.includes(filter)) {
+             container.style.display = ''; 
+         } else {
+             container.style.display = 'none'; 
+         }
+     } else {
+         
+         container.style.display = 'none'; 
+     }
+ } else {
+     
+     container.style.display = 'none';
+ }
+});
+}
+document.getElementById('search_bar').addEventListener('input', searchitem);
+ </script>
+</body>
+</html>
